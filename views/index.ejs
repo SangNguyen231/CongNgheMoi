@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div class="content">
+        <form id="create" action="/" method="POST" enctype="multipart/form-data">
+            <input name="ma_Sp" type="number" placeholder="Nhap ma sp"/>
+            <input name="ten_Sp" type="text" placeholder="Nhap ten sp"/>
+            <input name="so_Luong" type="number" placeholder="Nhap so luong"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form action="/delete" method="POST" enctype="multipart/form-data">
+            <input type="submit" value="Xoa"/>
+            <table border="1">
+                <tr>
+                    <th>Ma san pham</th>
+                    <th>Ten san pham</th>
+                    <th>So luong</th>
+                    <th>Hanh dong</th>
+                </tr>
+                <% for(let i = 0; i < sanPhams.length; i++) { %>
+                    <tr>
+                        <td><%=sanPhams[i].ma_Sp%></td>
+                        <td><%=sanPhams[i].ten_Sp%></td>
+                        <td><%=sanPhams[i].so_Luong%></td>
+                        <td><input type="checkbox" name="<%=sanPhams[i].ma_Sp%>"/></td>
+                    </tr>
+                <% } %>    
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+th {
+    background-color: gray;
+}
